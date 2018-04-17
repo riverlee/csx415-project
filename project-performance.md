@@ -29,11 +29,22 @@ In this analysis, we will look at each feature to test whether the average (medi
 head(diabetes)
 ```
 
-<div data-pagedtable="false">
-  <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Pregnancies"],"name":[1],"type":["int"],"align":["right"]},{"label":["Glucose"],"name":[2],"type":["int"],"align":["right"]},{"label":["BloodPressure"],"name":[3],"type":["int"],"align":["right"]},{"label":["SkinThickness"],"name":[4],"type":["int"],"align":["right"]},{"label":["Insulin"],"name":[5],"type":["int"],"align":["right"]},{"label":["BMI"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["DiabetesPedigreeFunction"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["Age"],"name":[8],"type":["int"],"align":["right"]},{"label":["Outcome"],"name":[9],"type":["fctr"],"align":["left"]}],"data":[{"1":"6","2":"148","3":"72","4":"35","5":"0","6":"33.6","7":"0.627","8":"50","9":"1"},{"1":"1","2":"85","3":"66","4":"29","5":"0","6":"26.6","7":"0.351","8":"31","9":"0"},{"1":"8","2":"183","3":"64","4":"0","5":"0","6":"23.3","7":"0.672","8":"32","9":"1"},{"1":"1","2":"89","3":"66","4":"23","5":"94","6":"28.1","7":"0.167","8":"21","9":"0"},{"1":"0","2":"137","3":"40","4":"35","5":"168","6":"43.1","7":"2.288","8":"33","9":"1"},{"1":"5","2":"116","3":"74","4":"0","5":"0","6":"25.6","7":"0.201","8":"30","9":"0"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
-  </script>
-</div>
+```
+##   Pregnancies Glucose BloodPressure SkinThickness Insulin  BMI
+## 1           6     148            72            35       0 33.6
+## 2           1      85            66            29       0 26.6
+## 3           8     183            64             0       0 23.3
+## 4           1      89            66            23      94 28.1
+## 5           0     137            40            35     168 43.1
+## 6           5     116            74             0       0 25.6
+##   DiabetesPedigreeFunction Age Outcome
+## 1                    0.627  50       1
+## 2                    0.351  31       0
+## 3                    0.672  32       1
+## 4                    0.167  21       0
+## 5                    2.288  33       1
+## 6                    0.201  30       0
+```
 
 ```r
 source("src/explore.R")
