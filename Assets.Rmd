@@ -1,0 +1,47 @@
+---
+title: "Assets"
+author: "Jiang Li"
+date: "4/24/2018"
+output: 
+  html_document:
+    toc: true
+    keep_md: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Inputs
+
+**Data**
+
+- Downloaded from https://www.kaggle.com/datasets
+
+Input file
+~/GDM/data/diabetes.csv
+
+**As munged for usage in project:**
+~/GDM/munge/01-A.R
+
+- trainDat
+- testDat
+
+## Output
+
+Linear model performance
+~/GDM/reports/model-performance-linear.html
+
+Tree model performance
+~/GDM/reports/model-performance-rpart.html
+
+
+
+
+
+
+
+## Outputs
