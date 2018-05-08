@@ -1,0 +1,115 @@
+---
+title: "Multiple Models performance"
+subtitle: "Predict gestational diabetes"
+author: "Jiang Li"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    keep_md: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning  = FALSE)
+knitr::opts_knit$set(root.dir = "../../GDM/" )
+```
+
+## Load Data
+
+We will use [ProjectTemplate](http://projecttemplate.net/) to layout my project. When load the project, we will split the **diabetes** dataset into train and test dataset, namely **trainDat** (70%) and **testDat**(remaining 30%).
+
+
+```{r load,cache=FALSE}
+library(ProjectTemplate)
+load.project()
+ls()
+```
+
+The mung code to read the csv files and split it into trainning (**trainDat**) and testing(**testDat**) dataset is located in **GDM/munge/01-A.R**. Code is listed below
+
+```{r code,eval=FALSE,}
+# Example preprocessing script.
+
+## split the diabetes dataset into train and test ##
+set.seed(1)
+diabetes$Outcome = as.factor(diabetes$Outcome)
+inTrain <- createDataPartition(diabetes$Outcome, p = 0.70 , list = FALSE)
+trainDat <- diabetes[ inTrain, ]
+testDat <- diabetes[ -inTrain, ]
+rm(inTrain)
+```
+
+
+## Performance on different models
+
+We will apply **[caret](http://topepo.github.io/caret/index.html)** to test a series of models on the training dataset using **bootstrap(boot)** method to tune the parameters and get the performance on the testing dataset.
+
+
+The models will be tested are:
+
+- Linear model (**glmnet**)
+- Decision tree (**rpart**)
+- Neural Networks (**nnet**)
+- RandomForest  (**rf**)
+- SVM   (**svmRadial**)
+- Gradient Boosted Trees (**xgbTree**)
+
+```{r model,cache=TRUE}
+library(caret)
+
+model.names = c("glmnet","rpart","nnet","rf","svmRadial","xgbTree")
+names(model.names) = c("Generalized Linear Model","Decision Tree","Neural Networks","RandomForest","SVM","Gradient Boosted Trees")
+models.list = vector("list",length(model.names))
+names(models.list) = model.names
+
+for( i in 1:length(model.names)){
+  cat("[",date(),"] Trainning Model - ",names(model.names)[i],"(",model.names[i],")\n")
+  
+  set.seed(123)
+  if(model.names[i]=="nnet"){
+    models.list[[i]] <-train(Outcome~.,
+                data = trainDat,
+                method=model.names[i],
+                ## This parameter only works for nnet to turn off message
+                trace=FALSE)  ## Default boot resampling
+  }else{
+    models.list[[i]] <-train(Outcome~.,
+                data = trainDat,
+                method=model.names[i]) ## Default boot resampling
+
+  }
+}
+save(models.list,file = "result/models-list.RData")
+
+```
+
+- **Gradient Boosted Trees** has the best performance while **Neural Network** has the least performance
+
+```{r performance,cache=TRUE}
+library(tidyverse)
+## Get accuracy on the test dataset
+performance.list<-lapply(models.list, function(model){
+  confusionMatrix(predict(model,testDat),testDat$Outcome)
+})
+
+lapply(performance.list,function(x) x$overall[1]) %>%
+                as.data.frame() %>% t() %>% as.data.frame() %>%
+                mutate(Method = rownames(.)) %>%
+  ggplot(aes(x=Method,y=Accuracy,fill=Method)) +
+    geom_bar(stat="identity")+
+    geom_text(aes(y=Accuracy+0.05,label=round(Accuracy,3)))+
+    ggtitle("Accuracy of each Models on the test dataset")
+
+
+
+
+```
+
+

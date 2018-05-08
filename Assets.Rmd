@@ -27,6 +27,8 @@ Input file
 **As munged for usage in project:**
 ~/GDM/munge/01-A.R
 
+
+It loads the input file (**~/GDM/data/diabetes.csv**) and split the dataset into training (70%) and testing (30%) with R vaiable names are:
 - trainDat
 - testDat
 
@@ -39,9 +41,3 @@ Tree model performance
 ~/GDM/reports/model-performance-rpart.html
 
 
-
-
-
-
-
-## Outputs

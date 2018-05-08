@@ -1,0 +1,15 @@
+base
+ProjectTemplate
+reshape2
+dplyr
+ggplot2
+stringr
+lattice
+caret
+tidyverse
+tibble
+tidyr
+readr
+purrr
+forcats
+bindrcpp
