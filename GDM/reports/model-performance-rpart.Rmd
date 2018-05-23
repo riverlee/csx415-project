@@ -148,7 +148,7 @@ model.auc.text <- model.auc %>%
 model.auc.text = paste( model.auc.text[,1],collapse = "\n")
                 
 
-save(model.auc,file ="model.auc.rpart.Rda")
+save(model.auc,file ="result/model.auc.rpart.Rda")
 ggplot(sp.se,aes(x = 1-specificity,y=sensitivity,color=type))+
     geom_line() +
     geom_abline(slope = 1,color='grey')+

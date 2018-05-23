@@ -11,7 +11,7 @@
 
 <meta name="author" content="Jiang Li" />
 
-<meta name="date" content="2018-04-24" />
+<meta name="date" content="2018-05-23" />
 
 <title>Tree Model Performance</title>
 
@@ -226,7 +226,7 @@ div.tocify {
 <h1 class="title toc-ignore">Tree Model Performance</h1>
 <h3 class="subtitle"><em>Predict gestational diabetes</em></h3>
 <h4 class="author"><em>Jiang Li</em></h4>
-<h4 class="date"><em>2018-04-24</em></h4>
+<h4 class="date"><em>2018-05-23</em></h4>
 
 </div>
 
@@ -237,8 +237,8 @@ div.tocify {
 <pre class="r"><code>library(ProjectTemplate)
 load.project()
 ls()</code></pre>
-<pre><code>## [1] &quot;config&quot;          &quot;diabetes&quot;        &quot;helper.function&quot; &quot;project.info&quot;   
-## [5] &quot;testDat&quot;         &quot;trainDat&quot;</code></pre>
+<pre><code>## [1] &quot;config&quot;       &quot;diabetes&quot;     &quot;project.info&quot; &quot;testDat&quot;     
+## [5] &quot;trainDat&quot;</code></pre>
 <p>The mung code to read the csv files and split it into trainning (<strong>trainDat</strong>) and testing(<strong>testDat</strong>) dataset is located in <strong>GDM/munge/01-A.R</strong>. Code is listed below</p>
 <pre class="r"><code># Example preprocessing script.
 
@@ -357,7 +357,7 @@ cat(&quot;rpart Model performance (AUC)&quot;)</code></pre>
 model.auc.text = paste( model.auc.text[,1],collapse = &quot;\n&quot;)
                 
 
-save(model.auc,file =&quot;model.auc.rpart.Rda&quot;)
+save(model.auc,file =&quot;result/model.auc.rpart.Rda&quot;)
 ggplot(sp.se,aes(x = 1-specificity,y=sensitivity,color=type))+
     geom_line() +
     geom_abline(slope = 1,color='grey')+

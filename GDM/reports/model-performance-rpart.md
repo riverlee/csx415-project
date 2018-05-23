@@ -2,7 +2,7 @@
 title: "Tree Model Performance"
 subtitle: "Predict gestational diabetes"
 author: "Jiang Li"
-date: "2018-04-24"
+date: "2018-05-23"
 output: 
   html_document:
     toc: true
@@ -28,8 +28,8 @@ ls()
 ```
 
 ```
-## [1] "config"          "diabetes"        "helper.function" "project.info"   
-## [5] "testDat"         "trainDat"
+## [1] "config"       "diabetes"     "project.info" "testDat"     
+## [5] "trainDat"
 ```
 
 The mung code to read the csv files and split it into trainning (**trainDat**) and testing(**testDat**) dataset is located in **GDM/munge/01-A.R**. Code is listed below
@@ -192,7 +192,7 @@ model.auc.text <- model.auc %>%
 model.auc.text = paste( model.auc.text[,1],collapse = "\n")
                 
 
-save(model.auc,file ="model.auc.rpart.Rda")
+save(model.auc,file ="result/model.auc.rpart.Rda")
 ggplot(sp.se,aes(x = 1-specificity,y=sensitivity,color=type))+
     geom_line() +
     geom_abline(slope = 1,color='grey')+

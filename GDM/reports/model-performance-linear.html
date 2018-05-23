@@ -11,7 +11,7 @@
 
 <meta name="author" content="Jiang Li" />
 
-<meta name="date" content="2018-04-24" />
+<meta name="date" content="2018-05-23" />
 
 <title>Linear Model Performance</title>
 
@@ -226,7 +226,7 @@ div.tocify {
 <h1 class="title toc-ignore">Linear Model Performance</h1>
 <h3 class="subtitle"><em>Predict gestational diabetes</em></h3>
 <h4 class="author"><em>Jiang Li</em></h4>
-<h4 class="date"><em>2018-04-24</em></h4>
+<h4 class="date"><em>2018-05-23</em></h4>
 
 </div>
 
@@ -237,8 +237,8 @@ div.tocify {
 <pre class="r"><code>library(ProjectTemplate)
 load.project()
 ls()</code></pre>
-<pre><code>## [1] &quot;config&quot;          &quot;diabetes&quot;        &quot;helper.function&quot; &quot;project.info&quot;   
-## [5] &quot;testDat&quot;         &quot;trainDat&quot;</code></pre>
+<pre><code>## [1] &quot;config&quot;       &quot;diabetes&quot;     &quot;project.info&quot; &quot;testDat&quot;     
+## [5] &quot;trainDat&quot;</code></pre>
 <p>The mung code to read the csv files and split it into trainning (<strong>trainDat</strong>) and testing(<strong>testDat</strong>) dataset is located in <strong>GDM/munge/01-A.R</strong>. Code is listed below</p>
 <pre class="r"><code># Example preprocessing script.
 
@@ -304,7 +304,8 @@ diabetes %&gt;%
 <div id="use-all-features" class="section level3">
 <h3>Use all features</h3>
 <ul>
-<li>The AUC on training and testing is 0.852 and 0.802 seperately.</li>
+<li>The AUC on training and testing is 0.852 and 0.802 separately.</li>
+<li>It looks the trainning dataset is not over fitting</li>
 </ul>
 <pre class="r"><code>## Will train model on the trainDat
 model.linear = glm(Outcome~.,data = trainDat,family = &quot;binomial&quot;)
@@ -377,7 +378,7 @@ cat(&quot;Linear Model performance (AUC)&quot;)</code></pre>
 
 model.auc.text = paste( model.auc.text[,1],collapse = &quot;\n&quot;)
 
-save(model.auc,file =&quot;model.auc.linear.Rda&quot;)
+save(model.auc,file =&quot;result/model.auc.linear.Rda&quot;)
 ggplot(sp.se,aes(x = 1-specificity,y=sensitivity,color=type))+
     geom_line() +
     geom_abline(slope = 1,color='grey')+
@@ -389,7 +390,7 @@ ggplot(sp.se,aes(x = 1-specificity,y=sensitivity,color=type))+
 <h3>Use a subset of features</h3>
 <ul>
 <li>Use only features of <strong>Pregnancies</strong>, <strong>Glucose</strong>, <strong>BloodPressure</strong> ,<strong>DiabetesPedigreeFunction</strong> and <strong>BMI</strong></li>
-<li>The AUC on training and testing is 0.850 and 0.802 seperately - <strong>Using 5 features doesn’t decrease the performance</strong></li>
+<li>The AUC on training and testing is 0.850 and 0.802 separately - <strong>Using 5 features doesn’t decrease the performance</strong></li>
 </ul>
 <pre class="r"><code>## Will train model on the trainDat
 model.linear2 = trainDat %&gt;%

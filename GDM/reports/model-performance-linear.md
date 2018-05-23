@@ -2,7 +2,7 @@
 title: "Linear Model Performance"
 subtitle: "Predict gestational diabetes"
 author: "Jiang Li"
-date: "2018-04-24"
+date: "2018-05-23"
 output: 
   html_document:
     toc: true
@@ -28,8 +28,8 @@ ls()
 ```
 
 ```
-## [1] "config"          "diabetes"        "helper.function" "project.info"   
-## [5] "testDat"         "trainDat"
+## [1] "config"       "diabetes"     "project.info" "testDat"     
+## [5] "trainDat"
 ```
 
 The mung code to read the csv files and split it into trainning (**trainDat**) and testing(**testDat**) dataset is located in **GDM/munge/01-A.R**. Code is listed below
@@ -121,7 +121,8 @@ diabetes %>%
 
 ### Use all features
 
-- The AUC on training and testing is 0.852 and 0.802 seperately.
+- The AUC on training and testing is 0.852 and 0.802 separately.
+- It looks the trainning dataset is not over fitting
 
 
 ```r
@@ -214,7 +215,7 @@ model.auc.text <- model.auc %>%
 
 model.auc.text = paste( model.auc.text[,1],collapse = "\n")
 
-save(model.auc,file ="model.auc.linear.Rda")
+save(model.auc,file ="result/model.auc.linear.Rda")
 ggplot(sp.se,aes(x = 1-specificity,y=sensitivity,color=type))+
     geom_line() +
     geom_abline(slope = 1,color='grey')+
@@ -228,7 +229,7 @@ ggplot(sp.se,aes(x = 1-specificity,y=sensitivity,color=type))+
 ### Use a subset of features
 
 - Use only features of **Pregnancies**, **Glucose**, **BloodPressure** ,**DiabetesPedigreeFunction** and **BMI**
-- The AUC on training and testing is 0.850 and 0.802 seperately - **Using 5 features doesn't decrease the performance**
+- The AUC on training and testing is 0.850 and 0.802 separately - **Using 5 features doesn't decrease the performance**
 
 
 ```r
