@@ -35,7 +35,7 @@ It loads the input file (**[GDM/data/diabetes.csv](GDM/data/diabetes.csv)**) and
 
 ### EDA and Naive model performance
 
--[GDM/reports/project-performance.md](GDM/reports/project-performance.md)
+- [GDM/reports/project-performance.md](GDM/reports/project-performance.md)
 
 ###  Linear model performance
 - [GDM/reports/model-performance-linear.md](GDM/reports/model-performance-linear.md)
