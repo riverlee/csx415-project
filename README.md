@@ -1,5 +1,8 @@
-# project
+# project - Predict gestational diabetes
 
-This repository is your repository for containing assets for your final project. It should include all supporting documentation, any files, code, reports and (possibly) the data to run your project.  
+This is the project of **["CSX415.1 Data Science Principles and Practice"](https://extension.berkeley.edu/search/publicCourseSearchDetails.do;jsessionid=8DC36570C866182DA02E66C491A44036?method=load&courseId=27251189)**. The goal is to predict gestational diabetes.
 
-You should replace this README.md file with a proper description of your project.
+
+Please refer to **[Assets.md](Assets.md)** for the list of files for the project.
+
+
