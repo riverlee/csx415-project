@@ -1,8 +1,8 @@
-Package: GDM.Models
-Title: Gradient boost tree model for gestational diabetes project
+Package: GDM.Score
+Title: Predict gestational diabetes project
 Version: 0.10
 Authors@R: person("Jiang", "Li", email = "first.last@example.com", role = c("aut", "cre"))
-Description: 6 models which are glmnet,rpart,nnet,rf,svmRadial and xgbTree
+Description:  Predict gestational diabetes project
 Depends: R (>= 3.0.0)
 License: MIT
 Imports: caret
