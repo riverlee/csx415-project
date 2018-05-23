@@ -1,0 +1,59 @@
+---
+title: "Project Performance"
+subtitle: "Predict gestational diabetes"
+author: "Jiang Li"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    keep_md: yes
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache = FALSE)
+knitr::opts_chunk$set(message = FALSE)
+knitr::opts_chunk$set(warning  = FALSE)
+knitr::opts_knit$set(root.dir = "GDM/" )
+```
+
+## Load Data
+
+We will use [ProjectTemplate](http://projecttemplate.net/) to layout my project. When load the project, we will split the **diabetes** dataset into train and test dataset, namely **trainDat** (70%) and **testDat**(remaining 30%).
+
+```{r load,cache=FALSE}
+library(ProjectTemplate)
+load.project()
+ls()
+```
+
+## Explore data
+
+In this analysis, we will look at each feature to test whether the average (median) value is different between diabetes patients and normal people. We would apply both t-test(**t.test**) and Wilcoxon Rank Sum (**wilcox.test**).
+
+```{r explore,fig.keep='all'}
+head(diabetes)
+source("src/explore.R")
+```
+
+
+
+
+## Naive Bayes
+
+We only get **78%** and **73%** accuracy on the tain and test dataset.
+
+```{r nv,cache=TRUE}
+source("src/funs.R")
+get.performance(trainDat,trainDat,algo = "nb")
+get.performance(trainDat,testDat,algo = "nb")
+
+```
+
+
+
+
+

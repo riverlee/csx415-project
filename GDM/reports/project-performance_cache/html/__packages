@@ -1,0 +1,10 @@
+base
+ProjectTemplate
+reshape2
+dplyr
+ggplot2
+stringr
+lattice
+caret
+MASS
+klaR

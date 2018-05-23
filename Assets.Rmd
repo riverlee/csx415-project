@@ -22,32 +22,37 @@ knitr::opts_chunk$set(echo = TRUE)
 - Downloaded from https://www.kaggle.com/datasets
 
 ### Input file
-~/GDM/data/diabetes.csv
+[GDM/data/diabetes.csv](GDM/data/diabetes.csv)
 
 ### **As munged for usage in project:**
-~/GDM/munge/01-A.R
+[GDM/munge/01-A.R](GDM/munge/01-A.R])
 
-It loads the input file (**~/GDM/data/diabetes.csv**) and split the dataset into training (70%) and testing (30%) with R vaiable names are:
+It loads the input file (**[GDM/data/diabetes.csv](GDM/data/diabetes.csv)**) and split the dataset into training (70%) and testing (30%) with R variable names:
 - trainDat
 - testDat
 
-## Output
+## Outputs
+
+### EDA and Naive model performance
+
+-[GDM/reports/project-performance.md](GDM/reports/project-performance.md)
 
 ###  Linear model performance
-- ~/GDM/reports/model-performance-linear.html
+- [GDM/reports/model-performance-linear.md](GDM/reports/model-performance-linear.md)
 
 ### Tree model performance
-- ~/GDM/reports/model-performance-rpart.html
+- [GDM/reports/model-performance-rpart.md](GDM/reports/model-performance-rpart.md)
 
 ### Multiple models performance
-implements serveral models which are glmnet,rpart,nnet,rf,svmRadial,xgbTree
-- ~/GDM/reports/multiple-model.html
+
+We implemented several models which are glmnet,rpart,nnet,rf,svmRadial,xgbTree
+- [GDM/reports/multiple-model.md](GDM/reports/multiple-model.md)
 - **Model result in R object**: 
-    - ~/GDM/result/models-list.RData
+    - [GDM/result/models-list.RData](GDM/result/models-list.RData)
     
 ### Model packages
-- ~/GDM/pkgs/GDM.Models
-- A script to build the package is avaiable at ~/GDM/src/build-GDM-model-pkgs.R
+- [GDM/pkgs/GDM.Models](GDM/pkgs/GDM.Models)
+- A script to build the package is avaiable at [GDM/src/build-GDM-model-pkgs.R](GDM/src/build-GDM-model-pkgs.R)
 
     
 
