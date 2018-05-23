@@ -48,11 +48,26 @@ We implemented several models which are glmnet,rpart,nnet,rf,svmRadial,xgbTree
 - **Model result in R object**: 
     - [GDM/result/models-list.RData](GDM/result/models-list.RData)
     
+### Final model
+- Final model is based on xgbtree based on [mutiple model anslysis]](GDM/reports/multiple-model.md)
+- [GDM/reports/Final-model.md](GDM/reports/Final-model.md)
+
+    
 ### Model packages
 - [GDM/pkgs/GDM.Models](GDM/pkgs/GDM.Models)
 - A script to build the package is avaiable at [GDM/src/build-GDM-model-pkgs.R](GDM/src/build-GDM-model-pkgs.R)
 
-    
+### Score packages
+- [GDM/pkgs/GDM.Score](GDM/pkgs/GDM.Score)
+- A script to build the package is avaiable at [GDM/src/build-GDM-score-pkgs.R](GDM/src/build-GDM-score-pkgs.R)
+
+
+### Development
+
+Developed throgh Shiny App
+
+-[GDM/app](GDM/app) 
+   
 
 
 
