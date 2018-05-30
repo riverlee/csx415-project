@@ -51,8 +51,7 @@ We implemented several models which are glmnet,rpart,nnet,rf,svmRadial,xgbTree
     - [GDM/result/models-list.RData](GDM/result/models-list.RData)
     
 ### Final model
-- Final model is based on xgbtree based on [mutiple model anslysis]](GDM/reports/multiple-model.md)
-- [GDM/reports/Final-model.md](GDM/reports/Final-model.md)
+- Final model is based on **xgbtree** [GDM/reports/Final-model.md](GDM/reports/Final-model.md)
 
     
 ### Model packages
@@ -66,9 +65,10 @@ We implemented several models which are glmnet,rpart,nnet,rf,svmRadial,xgbTree
 
 ### Development
 
-Developed throgh Shiny App
+Developed through Shiny App
 
--[GDM/app](GDM/app) 
+- [GDM/app](GDM/app)
+- Also avaiable at [https://riverlee2008.shinyapps.io/GDM_Shiny/](https://riverlee2008.shinyapps.io/GDM_Shiny/)
    
 
 

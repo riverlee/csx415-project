@@ -8,7 +8,13 @@
 #
 
 library(shiny)
-library(GDM.Score)
+if(!require(GDM.Score)){
+  devtools::install_github("riverlee/CSX415-project/GDM/app/pkgs/GDM.Score")
+}
+
+if(!require("xgboost")){
+  install.packages('xgboost')
+}
 
 # Define UI for application that draws a histogram
 
