@@ -6,7 +6,7 @@
 
 ## Depolyment
 
-- The project is depolyed through Shiny App, the source code is avaiable at [GDM/app/GDM_Shinny/app.R](DM/app/GDM_Shinny/app.R).
+- The project is depolyed through Shiny App, the source code is avaiable at [GDM/app/GDM_Shinny/app.R](GDM/app/GDM_Shinny/app.R).
 
 - It's also deployed at [https://riverlee2008.shinyapps.io/GDM_Shiny/](https://riverlee2008.shinyapps.io/GDM_Shiny/)
 
