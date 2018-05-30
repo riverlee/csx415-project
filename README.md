@@ -4,7 +4,36 @@
 
 - Please refer to **[Assets.md](Assets.md)** for the list of files for the project.
 
-- The project is depolyed at [https://riverlee2008.shinyapps.io/GDM_Shiny/](https://riverlee2008.shinyapps.io/GDM_Shiny/)
+## Depolyment
+
+- The project is depolyed through Shiny App, the source code is avaiable at [GDM/app/GDM_Shinny/app.R](DM/app/GDM_Shinny/app.R).
+
+- It's also deployed at [https://riverlee2008.shinyapps.io/GDM_Shiny/](https://riverlee2008.shinyapps.io/GDM_Shiny/)
+
+
+## Packages built for the project
+
+#### GDM.Models Package
+
+- This package implements the **xgbtree** model which has the best performance on the data.
+
+- To install it:
+
+```r
+devtools::install_github("riverlee/CSX415-project/GDM/pkgs/GDM.Models")
+```
+
+
+#### GDM.Score
+
+- This package implements the prediction based on the **xgbtree** model
+
+- To install it:
+
+```r
+devtools::install_github("riverlee/CSX415-project/GDM/pkgs/GDM.Score")
+```
+
 
 
 
