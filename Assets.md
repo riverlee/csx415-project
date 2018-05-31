@@ -33,7 +33,7 @@ It loads the input file (**[GDM/data/diabetes.csv](GDM/data/diabetes.csv)**) and
 
 ### Formal Problem statement (FPS)
 
-- [GDM/FPS/FPS_for_predicting_diabetes.md](GDM/FPS/FPS_for_predicting_diabetes.m)
+- [GDM/FPS/FPS_for_predicting_diabetes.md](GDM/FPS/FPS_for_predicting_diabetes.md)
 
 ### EDA and Naive model performance
 
