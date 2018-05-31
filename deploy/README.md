@@ -1,9 +1,3 @@
-# Project - Predict gestational diabetes
-
-- This is the project of **["CSX415.1 Data Science Principles and Practice"](https://extension.berkeley.edu/search/publicCourseSearchDetails.do;jsessionid=8DC36570C866182DA02E66C491A44036?method=load&courseId=27251189)**. The goal is to predict gestational diabetes.
-
-- Please refer to **[Assets.md](Assets.md)** for the list of files for the project.
-
 ## Depolyment
 
 - The project is depolyed through Shiny App, the source code is avaiable at [GDM/app/GDM_Shiny/app.R](GDM/app/GDM_Shiny/app.R).
@@ -22,7 +16,6 @@
 ```r
 devtools::install_github("riverlee/CSX415-project/GDM/pkgs/GDM.Models")
 ```
-
 
 - Example:
 
@@ -48,6 +41,5 @@ devtools::install_github("riverlee/CSX415-project/GDM/pkgs/GDM.Score")
 library(GDM.Score)
 score(8, 85,80,20,0,28,0.5,30)
 ```
-
 
 

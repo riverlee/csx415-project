@@ -5,7 +5,7 @@ Authors@R: person("Jiang", "Li", email = "first.last@example.com", role = c("aut
 Description: 6 models which are glmnet,rpart,nnet,rf,svmRadial and xgbTree
 Depends: R (>= 3.0.0)
 License: MIT
-Imports: caret
+Imports: caret,xgbtree
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1

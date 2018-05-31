@@ -6,7 +6,7 @@ Description: 6 models which are glmnet,rpart,nnet,rf,svmRadial and xgbTree
 Depends: R (>= 3.0.0)
 License: MIT
 Imports: caret
-Encoding: UTF-8
+Encoding: UTF-8,xgbtree
 LazyData: true
 RoxygenNote: 6.0.1
 Suggests: testthat
